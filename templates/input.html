@@ -1,51 +1,41 @@
 {% extends "layout.html" %}
 {% block content %}
-
-<div class="w3-card-4 w3-margin">
-
-    <header class="w3-container w3-blue">
-      <h1>Fill the Details</h1>
-    </header>
-
-
-    <form class="w3-container w3-margin" action="" method="post" enctype="multipart/form-data">
-      <label class="w3-text-teal"><b>Enter Your First Name</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='name' value="{{ name }}">
-      <br>
-
-      <label class="w3-text-teal"><b>Enter Your Email ID</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='email' value="{{ email }}">
-      <br>
-
-      <label class="w3-text-teal"><b>Enter your Contact No</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='num' value="{{ num }}">
-      <br>
-
-      <label class="w3-text-teal"><b>Age</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='age' value="{{ age }}">
-      <br>
-
-      <label class="w3-text-teal"><b>Gender</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='gender' value="{{ gender }}">
-      <br>
-  
-      <label class="w3-text-teal"><b>Password</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="password" name='password' value="{{ password }}">
-      <br>
-
-        <input class="w3-btn w3-blue-grey" name="sub" type="submit" value="Submit"/>
-        <br><br>
-   
-       
-    </form>
-
-    <br>
-    <footer class="w3-container w3-blue">
-      <h5></h5>
-    </footer>
-    
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm mt-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Register</h2>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ name }}" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email ID</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ email }}" required>
+          </div>
+          <div class="mb-3">
+            <label for="num" class="form-label">Contact No</label>
+            <input type="text" class="form-control" id="num" name="num" value="{{ num }}" required>
+          </div>
+          <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" name="age" value="{{ age }}" required>
+          </div>
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <input type="text" class="form-control" id="gender" name="gender" value="{{ gender }}" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" value="{{ password }}" required>
+          </div>
+          <button type="submit" name="sub" value="Submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
     </div>
-
-  
-
-    {% endblock %}
+  </div>
+</div>
+{% endblock %}

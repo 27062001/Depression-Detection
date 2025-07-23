@@ -100,11 +100,11 @@ def login():
 	global video
 	global name
 	if request.method == 'POST':
-		name = request.form['name']
-		password = request.form['password']
+		email = request.form.get('email', '')
+		password = request.form.get('password', '')
 		con = sqlite3.connect('mydatabase.db')
 		cursorObj = con.cursor()
-		cursorObj.execute(f"SELECT Name from Users WHERE Name='{name}' AND password = '{password}';")
+		cursorObj.execute(f"SELECT Name from Users WHERE Email='{email}' AND password = '{password}';")
 
 	
 		if(cursorObj.fetchone()):

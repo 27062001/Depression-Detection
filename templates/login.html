@@ -1,44 +1,30 @@
 {% extends "layout.html" %}
 {% block content %}
-
-<div class="w3-card-4 w3-margin">
-
-    <header class="w3-container w3-blue">
-      <h1>Fill the Details</h1>
-    </header>
-
-
-    <form class="w3-container w3-margin" action="" method="post" enctype="multipart/form-data">
-      <label class="w3-text-teal"><b>Enter Your Username</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='name' value="{{ name }}">
-      <br>
-
-
-  
-      <label class="w3-text-teal"><b>Password</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="password" name='password' value="{{ password }}">
-      <br>
-
-      <!--label class="w3-text-teal"><b>Video File Name</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='video' value="{{ video }}"-->
-      <br>
-
-        <input class="w3-btn w3-blue-grey" name="sub" type="submit" value="Submit"/>
-        <br><br>
-   
-       
-    </form>
-
-    <br>
-    <footer class="w3-container w3-blue">
-      <h5></h5>
-    </footer>
-    
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm mt-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Login</h2>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ email }}" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" value="{{ password }}" required>
+          </div>
+          <button type="submit" name="sub" class="btn btn-primary w-100">Submit</button>
+        </form>
+        {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+          {{ error }}
+        </div>
+        {% endif %}
+      </div>
     </div>
-
-    <div>
-      <p> {{ error }}</p>
-    </div>
-  
-
-    {% endblock %}
+  </div>
+</div>
+{% endblock %}

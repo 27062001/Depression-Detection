@@ -1,86 +1,59 @@
-{% extends "userlayout.html" %}
+{% extends "layout.html" %}
 {% block content %}
-
-<img src="static\images\021123_LS_depression_feat.jpg" alt="Car" style="width:100%">
-
-    <div class="w3-card-4 w3-margin">
-
-        <header class="w3-container w3-blue">
-          <h1>Introduction</h1>
-        </header>
-        
-        <div class="w3-container">
-          <p>Psychological health of college students prove a
-            vital role on their overall academic performance.
-            Neglecting this can result in several problems such as
-            stress, anxiety, depression etc. These problems need to be
-            detected and controlled at the initial stages itself for the
-            better mental health of the student. Detecting depression in
-            a vast no of college students is challenging task. Most of
-            the students are totally unaware that they may be having
-            depression. If at all they are aware of it, some students
-            conceal their depression from everyone. So an automated
-            system is required that will pick out the students who are
-            dealing with depression. A system has been proposed here
-            which captures frontal face videos of college students,
-            extracts the facial features from each frame and analyses
-            these facial features to detect signs of depression in them.
-            This system will be trained with of frontal face images of
-            happy, contempt and disgust faces. The presence of these
-            features in the video frames will be analyzed to predict
-            depression in the students.
-            
-	</p>
-        </div>
-        
-        <footer class="w3-container w3-blue">
-          <h5></h5>
-        </footer>
-        
-        </div>
-
-        <div class="w3-card-4 w3-margin">
-
-            <header class="w3-container w3-blue">
-              <h1>About The Project</h1>
-            </header>
-            
-            <div class="w3-container">
-              <p>
-                Depression detection from images alone, mainly depends
-                on a clear and proper definition of a depressed face. The facial
-                expression of a depressed face is slightly different from that of
-                sadness. A depressed face expression has the same
-                characteristics of a sad expression, such as the upward slanted
-                eyebrows etc. but the main difference is that there is no major
-                frown involved. Also a sad face may have eyes lowered
-                looking downward showing the helpless, dejected mood. On
-                the contrary a depressed person can put forth a face devoid of
-                depression. This depicts a case of concealed expression of
-                depression, i.e. the depressed face may not be a sad face, and
-                instead the person may put forth a happy face to conceal
-                depression.
-                Based the above analysis, it can be said that, most of the
-                work done for the recognition of the emotion ‘depression’
-                from faces is done on databases that included only adult
-                patients. But as mentioned above college students are more
-                vulnerable to depression, and detection of depression at the
-                college level can give more time to control it and better
-                counselling can be suggested. Thus a system can be proposed
-                that collects the video of college students for analysis of
-                depression		</p>
-            </div>
-            
-            <footer class="w3-container w3-blue">
-              <h5></h5>
-            </footer>
-            
-            </div>
-
-    <div class="w3-container w3-center">
-        <h2>Architecture Diagram</h2>
-        <img src="static\images\download.jpg" alt="car" style="width:100%">
-        <p>Figure1</p>
+<div class="row mb-4">
+  <div class="col-12">
+    <img src="{{ url_for('static', filename='images/021123_LS_depression_feat.jpg') }}" alt="Depression Detection"
+      class="img-fluid rounded shadow-sm mb-4">
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-md-6 mb-4">
+    <div class="card h-100">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Introduction</h2>
       </div>
-
+      <div class="card-body">
+        <p>Psychological health of college students proves a vital role on their overall academic performance.
+          Neglecting this can result in several problems such as stress, anxiety, depression etc. These problems need to
+          be detected and controlled at the initial stages itself for the better mental health of the student. Detecting
+          depression in a vast number of college students is a challenging task. Most of the students are totally
+          unaware that they may be having depression. If at all they are aware of it, some students conceal their
+          depression from everyone. So an automated system is required that will pick out the students who are dealing
+          with depression. A system has been proposed here which captures frontal face videos of college students,
+          extracts the facial features from each frame and analyses these facial features to detect signs of depression
+          in them. This system will be trained with frontal face images of happy, contempt and disgust faces. The
+          presence of these features in the video frames will be analyzed to predict depression in the students.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="card h-100">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">About The Project</h2>
+      </div>
+      <div class="card-body">
+        <p>Depression detection from images alone mainly depends on a clear and proper definition of a depressed face.
+          The facial expression of a depressed face is slightly different from that of sadness. A depressed face
+          expression has the same characteristics of a sad expression, such as the upward slanted eyebrows etc., but the
+          main difference is that there is no major frown involved. Also, a sad face may have eyes lowered looking
+          downward showing the helpless, dejected mood. On the contrary, a depressed person can put forth a face devoid
+          of depression. This depicts a case of concealed expression of depression, i.e. the depressed face may not be a
+          sad face, and instead the person may put forth a happy face to conceal depression. Based on the above
+          analysis, it can be said that most of the work done for the recognition of the emotion 'depression' from faces
+          is done on databases that included only adult patients. But as mentioned above, college students are more
+          vulnerable to depression, and detection of depression at the college level can give more time to control it
+          and better counselling can be suggested. Thus, a system can be proposed that collects the video of college
+          students for analysis of depression.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center">
+    <h2>Architecture Diagram</h2>
+    <img src="{{ url_for('static', filename='images/download.jpg') }}" alt="Architecture Diagram"
+      class="img-fluid rounded shadow-sm mb-2">
+    <p class="text-muted">Figure 1</p>
+  </div>
+</div>
 {% endblock %}

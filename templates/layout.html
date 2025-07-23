@@ -1,50 +1,85 @@
 <!DOCTYPE html>
-<html>
-<title>VA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Depression Detection</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  {% block head %}{% endblock %}
+</head>
+
 <body>
-
-<!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-  <h3 class="w3-bar-item">Menu</h3>
-  <a href="home" class="w3-bar-item w3-button">Home</a>
-  <a href="login" class="w3-bar-item w3-button">Login</a>
-  <a href="input" class="w3-bar-item w3-button">Register</a>
-</div>
-
-<!-- Page Content -->
-<div style="margin-left:25%">
-
-<div class="w3-container w3-teal">
-  <h1>Depression Detection Using Facial Expressions and Textmining</h1>
-</div>
-
-{% block content %}
-{% endblock %}
-
-
-
-<!-- Footer-->
-<div class="w3-container w3-teal">
-  <div class="w3-container w3-cell w3-mobile" style="width:85%">
-    <h5>Developed By</h5>
-    <div class="w3-container w3-cell">
-      <p>Ruchita Chavan</p>
-      <p>Mrunal Gosavi</p>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('home') }}">Depression Detection</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('input') }}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('video') }}">Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('textmining') }}">Text Mining</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('voice') }}">Voice</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('final_result') }}">Result</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="w3-container w3-cell">
-      <p>Maithili Baviskar</p>
-      <p>NParth Goyal</p>
-    </div>
-  </div>
-  <div class="w3-container w3-cell w3-mobile">
-    <h5>Guided By</h5>
-    <p>Mrs.Kajal Vatekar</p>
-  </div>
-  </div>
+  </nav>
 
-</div>
-      
+  <!-- Main Content -->
+  <main class="container my-5">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-4 mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 text-md-start">
+          <h5>Developed By</h5>
+          <div class="row">
+            <div class="col-6">
+              <p class="mb-0">Ruchita Chavan</p>
+              <p class="mb-0">Mrunal Gosavi</p>
+            </div>
+            <div class="col-6">
+              <p class="mb-0">Maithili Baviskar</p>
+              <p class="mb-0">NParth Goyal</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <h5>Guided By</h5>
+          <p class="mb-0">Mrs. Kajal Vatekar</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  {% block scripts %}{% endblock %}
 </body>
+
 </html>

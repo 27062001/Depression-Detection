@@ -1,60 +1,42 @@
-{% extends "userlayout.html" %}
+{% extends "layout.html" %}
 {% block content %}
-
-<div class="w3-card-4 w3-margin">
-
-    <header class="w3-container w3-blue">
-      <h1>Fill the Details</h1>
-    </header>
-
-
-    <form class="w3-container w3-margin" action="" method="post" enctype="multipart/form-data">
-      <label class="w3-text-teal"><b>Enter Your First Name</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='name' value="{{ name }}">
-      <br>
-
-      <label class="w3-text-teal"><b>Enter Your Email ID</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='email' value="{{ email }}">
-      <br>
-
-      <label class="w3-text-teal"><b>Enter your Contact No</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="text" name='num' value="{{ num }}">
-      <br>
-      
-      <label class="w3-text-teal"><b>How are you feeling today?</b></label>
-      <textarea class="w3-input w3-border w3-light-grey" rows="10" cols="47" name="symptoms" placeholder="Type Your Here..!!">{% if symptoms %} {{symptoms}} {% endif %}</textarea>
-      <br>
-     
-
-        <input class="w3-btn w3-blue-grey" name="sub" type="submit" value="Submit"/>
-        <br><br>
-   
-       
-    </form>
-
-    <br>
-    <footer class="w3-container w3-blue">
-      <h5></h5>
-    </footer>
-    
-    </div>
-
-    <div class="w3-card-4 w3-margin">
-
-      <header class="w3-container w3-blue">
-        <h1>Test Report</h1>
-      </header>
-      
-      <div class="w3-container">
-        <p>
-         {{ result }}
-      </p>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm mt-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Text Mining Input</h2>
       </div>
-      
-      <footer class="w3-container w3-blue">
-        <h5></h5>
-      </footer>
-      
-      </div>    
-
-    {% endblock %}
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ name }}">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email ID</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ email }}">
+          </div>
+          <div class="mb-3">
+            <label for="num" class="form-label">Contact No</label>
+            <input type="text" class="form-control" id="num" name="num" value="{{ num }}">
+          </div>
+          <div class="mb-3">
+            <label for="symptoms" class="form-label">How are you feeling today?</label>
+            <textarea class="form-control" id="symptoms" name="symptoms" rows="5"
+              placeholder="Type here...">{% if symptoms %}{{ symptoms }}{% endif %}</textarea>
+          </div>
+          <button type="submit" name="sub" class="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="card shadow-sm mt-4">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Test Report</h2>
+      </div>
+      <div class="card-body">
+        <p>{{ result }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
