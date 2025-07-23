@@ -1,6 +1,6 @@
 # import the necessary packages
 from flask import Flask, render_template, redirect, url_for, request,session,Response
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 from supportFile import *
 import os
 import cv2
